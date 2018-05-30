@@ -53,12 +53,20 @@ Luckily, we've had a very relaxed relationship to discussing our own code, so we
 
 ## Individual Discussion
 ### Good code
-For review of good code, I have decided to review 
+For review of good code, I have decided to review EyegazeBrowserPointer.cs. I do not view it as perfect, but as relatively self-explanatory.
+It can be found at https://github.com/BaardsethK/ProfProg/blob/master/EyegazeBrowserPointer.cs
+The script is a child of EyegazeGeneralPointer.cs (https://github.com/BaardsethK/ProfProg/blob/master/EyegazeGeneralPointer.cs) which I am not yet content with, and needs review/refactor.
+In short, is is made to translate the position of a 3D object from world space to a 2D-position relative to the view inside a canvas.
 
+#### Why do I think it is somewhat good.
+The code has neccessary commenting, as triple-slash and some explanations on functions.
+Most variable names (bar localPos) is self-explanatory, such as mBrowser, mBrowserCanvas, and pointerInBrowserSpace.
+The code itself is relatively straight-forward and easy to understand.
 
+However, I am not entirely happy with the whole setup, and would like to rewrite it if I had the time. I would like this space to showcase a better example than listed.
 
 ### Bad code
-For review of bad code, I have decided to review CircularMotionsDirection.cs.
+For review of bad code, I have decided to review CircularMotionsDirection.cs (https://github.com/BaardsethK/ProfProg/blob/master/CircularMotionDirection.cs).
 In short, the script is used as a handler for when a set of buttons controlling motion is pressed. It uses an enum, set in the Unity Editor, along with a switch to decide where and how fast to move.
 
 #### Name
@@ -77,7 +85,8 @@ The switch consists of many functions copying each other, all doing the same act
 In addition, the if can be shortened. motionCircleCanvas.transform.position can be saved as a transform, which can reduce some of the clutter in the code.
 
 ### Refactoring
-I decided to refactor CircularMotionDirection.cs, after reviewing it, as I had already reviewed the code.
+I decided to refactor CircularMotionDirection.cs, after reviewing it.
+Refactored code can be found in https://github.com/BaardsethK/ProfProg/blob/master/RefactoredGazeCameraControls.cs
 
 #### Names
 Name was changed to GazeCameraControls.cs.
@@ -92,6 +101,9 @@ This changes has been done since these are the only values being used/changed.
 #### Helper function
 
 A helper function to do Translate on the transforms of mainCamera and GazeCameraControlCanvas has been added. This way, there is less code duplication, and all switch functions can run through the helper function. This is probably not optimal, but cleaner and easier to change than the previous implementation.
+
+#### Conclusion
+The code is not shorter, but it has been simplified with the helper function. The variable names should be more descriptive, and it should be easier to understand what the variables refer to by someone looking at the code (given that they understand Unity's transforms and canvases).
 
 ####
 
