@@ -97,7 +97,7 @@ public class CircularMotionDirection : MonoBehaviour, IPointerClickHandler {
                 if (motionCircleCanvas.transform.position.x > - (useAreaSize.x / 2) * useAreaScale.y)
                 {
                     mainCamera.transform.Translate(new Vector3(-cameraMoveSpeed, 0, 0));
-                    motionCircleCanvas.transform.Translate(new Vector3( cameraMoveSpeed, 0, 0));
+                    motionCircleCanvas.transform.Translate(new Vector3(-cameraMoveSpeed, 0, 0));
                 }
                 break;
             case MoveDir.RIGHT:
