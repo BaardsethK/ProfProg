@@ -6,7 +6,7 @@ using Tobii.Gaming;
 using UnityEngine.UI;
 using System;
 
-//Code copied from Tobii "GazePlotter.cs". All theirs
+//Code based on Tobii's "GazePlotter.cs". All theirs
 public class EyegazeBrowserPointer : EyegazeGeneralPointer {
 
     [SerializeField]
