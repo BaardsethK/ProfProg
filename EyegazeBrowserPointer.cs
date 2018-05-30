@@ -33,7 +33,7 @@ public class EyegazeBrowserPointer : EyegazeGeneralPointer {
     {
         var raycaster = mBrowserCanvas.GetComponent<GraphicRaycaster>();
         Vector2 localPos;
-		RectTransform mBrowserRectTrns = mBrowser.transform as RectTransform;
+	RectTransform mBrowserRectTrns = mBrowser.transform as RectTransform;
 
         Vector3 pointerInWorldSpace = ProjectToPlaneInWorld(gazePoint);
         pointerInWorldSpace = Smoothify(pointerInWorldSpace);
